@@ -1,8 +1,14 @@
-// Entry point
+// Entry point for all pages
 
-// Calls router component, which determines
-// which page to display and renders it
-import("./pages/router").then(f => f.default())
+// @ts-ignore: Property 'UrlPattern' does not exist
+if (!globalThis.URLPattern)
+	import("urlpattern-polyfill").then(importRouter);
+else importRouter();
+
+function importRouter() {
+	// Imports router component, which picks a page to display
+	import("./pages/router").then(f => f.default());
+}
 
 // Needed for the file to be loaded as module
 export {}

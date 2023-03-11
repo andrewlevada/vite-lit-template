@@ -9,11 +9,16 @@ export default defineConfig({
 			"~utils": "/src/utils",
 			"~assets": "/src/assets",
 			"~styles": "/src/assets/styles",
+			"~graphics": "./src/assets/graphics",
 			"~src": "/src"
 		},
 	},
+
 	build: {
 		outDir: "build"
-	}
+	},
+
+	// When hosting on GitHub Pages, change base to the repository name
+	base: "/"
 })
 

@@ -1,16 +1,19 @@
 {
   "compilerOptions": {
+    // When hosting on GitHub Pages, change base to the repository name
+    "baseUrl": ".",
+
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "target": "ES6",
     "module": "ESNext",
     "moduleResolution": "node",
-    "baseUrl": ".",
     "paths": {
       "~services/*": ["./src/services/*"],
       "~components/*": ["./src/components/*"],
       "~utils/*": ["./src/utils/*"],
       "~assets/*": ["./src/assets/*"],
+      "~graphics/*": ["./src/assets/graphics/*"],
       "~styles/*": ["./src/assets/styles/*"],
       "~src/*": ["./src/*"]
     },

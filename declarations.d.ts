@@ -1,4 +1,4 @@
-// This part allows you to use css logic
+// Support of css modules
 // Delete it if you don't need them
 
 declare module "*.css" {
@@ -11,7 +11,7 @@ declare module "*.scss" {
 	export default content;
 }
 
-// This part allows you to reference images from scripts
+// This part allows references to images from scripts
 
 declare module "*.png";
 declare module "*.jpg";

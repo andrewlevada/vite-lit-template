@@ -13,3 +13,5 @@ export const pageStyles = [
 	unsafeCSS(layoutHelperStyles),
 	unsafeCSS(globalPageStyles),
 ];
+
+// Global variables and logic goes here

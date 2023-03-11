@@ -2,7 +2,7 @@ import { css, html, LitElement, TemplateResult } from "lit";
 import { html as staticHtml, unsafeStatic } from "lit/static-html.js";
 import { defineComponent } from "~utils/components";
 import { RouteConfig, Router } from "@lit-labs/router";
-import { complexRoutes, simpleRoutes } from "~src/pages/routes-config";
+import { basePath, complexRoutes, simpleRoutes } from "~src/pages/routes-config";
 
 export default (): void => defineComponent("app-router", AppRouter);
 export class AppRouter extends LitElement {
@@ -31,7 +31,7 @@ export interface DefaultRoute {
 
 function generateRoutes(defaultRoutes: DefaultRoute[]): RouteConfig[] {
 	return defaultRoutes.map(v => ({
-		path: v.path,
+		path: basePath + v.path,
 		render: () => staticHtml`${unsafeStatic(pageElementHtml(v.tag))}`,
 		enter: () => import(`./${v.tag}/index.ts`).then(f => f.default()),
 	}));
