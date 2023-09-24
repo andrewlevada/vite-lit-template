@@ -1,3 +1,4 @@
 # Vite Lit Project Template
 
-Previous version — [Webpack Template](https://github.com/andrewlevada/webpack-lit-template)
+Uses vite, typescript, scss, lit and lit-router.
+Supports GitHub Pages.

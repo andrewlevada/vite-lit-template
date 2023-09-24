@@ -10,4 +10,4 @@ export const simpleRoutes: DefaultRoute[] = [
 export const complexRoutes: RouteConfig[] = []
 
 // In "/<path>/<path>" format
-export const basePath: string = "/";
+export const basePath: string = "";
