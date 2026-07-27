@@ -2,7 +2,7 @@ import { css, html, LitElement, TemplateResult, unsafeCSS } from "lit";
 import { property } from "lit/decorators.js";
 import { componentStyles } from "~src/global";
 import { defineComponent } from "~utils/components";
-import scopedStyles from "./styles.scss";
+import scopedStyles from "./styles.scss?inline";
 
 export default (): void => defineComponent("hello-text", HelloText);
 export class HelloText extends LitElement {

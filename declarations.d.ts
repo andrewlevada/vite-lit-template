@@ -1,13 +1,13 @@
 // Support of css modules
 // Delete it if you don't need them
 
-declare module "*.css" {
-	const content: CSSStyleSheet;
+declare module "*.css?inline" {
+	const content: string;
 	export default content;
 }
 
-declare module "*.scss" {
-	const content: CSSStyleSheet;
+declare module "*.scss?inline" {
+	const content: string;
 	export default content;
 }
 

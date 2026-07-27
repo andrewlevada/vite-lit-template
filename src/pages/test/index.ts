@@ -1,14 +1,14 @@
-import { css, html, LitElement, TemplateResult, unsafeCSS } from "lit";
-import { state } from "lit/decorators.js";
-import { pageStyles } from "~src/global";
-import { getUsername } from "~services/name-service";
-import scopedStyles from "./styles.scss";
-import { defineComponent } from "~utils/components";
+import { css, html, LitElement, TemplateResult, unsafeCSS } from "lit"
+import { state } from "lit/decorators.js"
+import { pageStyles } from "~src/global"
+import { getUsername } from "~services/name-service"
+import scopedStyles from "./styles.scss?inline"
+import { defineComponent } from "~utils/components"
 
-import("~components/hello-text").then(f => f.default());
+import("~components/hello-text").then(f => f.default())
 
-// Notice page tag style!
-export default (): void => defineComponent("app-page--test", TestPage);
+// Notice page tag style. The `app-page--${tag}` format identifies it as a page
+export default (): void => defineComponent("app-page--test", TestPage)
 export class TestPage extends LitElement {
 	@state() username: string | null = null;
 
@@ -17,12 +17,12 @@ export class TestPage extends LitElement {
 			<div class="container">
 				<hello-text sub="Welcome User">${this.username}</hello-text>
 			</div>
-		`;
+		`
 	}
 
 	connectedCallback(): void {
-		super.connectedCallback();
-		this.username = getUsername();
+		super.connectedCallback()
+		this.username = getUsername()
 
 		// TODO: Add production env variable
 		// if (!PRODUCTION) console.log("Everything is working!");

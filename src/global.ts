@@ -1,6 +1,6 @@
-import globalStyles from "~styles/global.scss";
-import globalPageStyles from "~src/pages/global-styles.scss";
-import layoutHelperStyles from "~styles/tiny-layout-helper.scss";
+import globalStyles from "~styles/global.scss?inline";
+import globalPageStyles from "~src/pages/global-styles.scss?inline";
+import layoutHelperStyles from "~styles/tiny-layout-helper.scss?inline";
 import { unsafeCSS } from "lit";
 
 export const componentStyles = [
