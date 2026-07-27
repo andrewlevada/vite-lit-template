@@ -1,4 +1,3 @@
 # Vite Lit Project Template
 
-Uses vite, typescript, scss, lit and lit-router.
-Supports GitHub Pages.
+Puts together Vite, Typescript, SCSS, Lit and an experimental Lit Router

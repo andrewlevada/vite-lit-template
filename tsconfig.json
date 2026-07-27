@@ -1,30 +1,61 @@
 {
   "compilerOptions": {
-    // When hosting on GitHub Pages, change base to the repository name
-    "baseUrl": ".",
-
+    // Lit decorator support
     "experimentalDecorators": true,
+    // Required for Lit - standard class fields break decorator initialization order
     "useDefineForClassFields": false,
-    "target": "ES6",
+    "target": "ES2021",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    // Use "bundler" for Vite projects (replaces legacy "node" resolution)
+    "moduleResolution": "bundler",
+    // Path aliases (must match vite.config.ts aliases)
     "paths": {
-      "~services/*": ["./src/services/*"],
-      "~components/*": ["./src/components/*"],
-      "~utils/*": ["./src/utils/*"],
-      "~assets/*": ["./src/assets/*"],
-      "~graphics/*": ["./src/assets/graphics/*"],
-      "~styles/*": ["./src/assets/styles/*"],
-      "~src/*": ["./src/*"]
+      "~src/*": [
+        "./src/*"
+      ],
+      "~services/*": [
+        "./src/services/*"
+      ],
+      "~components/*": [
+        "./src/components/*"
+      ],
+      "~utils/*": [
+        "./src/utils/*"
+      ],
+      "~assets/*": [
+        "./src/assets/*"
+      ],
+      "~graphics/*": [
+        "./src/assets/graphics/*"
+      ],
+      "~styles/*": [
+        "./src/assets/styles/*"
+      ]
     },
-    "noEmit": true,
+    // Type checking
     "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "noEmit": true,
     "skipLibCheck": true,
     "isolatedModules": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }],
-    "lib": ["DOM", "ESNext"]
+    // Interop
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ]
   },
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "./vite.tsconfig.json"
+    }
+  ]
 }
