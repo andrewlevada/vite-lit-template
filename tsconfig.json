@@ -4,59 +4,24 @@
     "experimentalDecorators": true,
     // Required for Lit - standard class fields break decorator initialization order
     "useDefineForClassFields": false,
-    "target": "ES2021",
+
+    "noEmit": true,
+
     "module": "ESNext",
+    "moduleResolution": "bundler",
     "lib": [
       "DOM",
       "ESNext"
     ],
-    // Use "bundler" for Vite projects (replaces legacy "node" resolution)
-    "moduleResolution": "bundler",
-    // Path aliases (must match vite.config.ts aliases)
-    "paths": {
-      "~src/*": [
-        "./src/*"
-      ],
-      "~services/*": [
-        "./src/services/*"
-      ],
-      "~components/*": [
-        "./src/components/*"
-      ],
-      "~utils/*": [
-        "./src/utils/*"
-      ],
-      "~assets/*": [
-        "./src/assets/*"
-      ],
-      "~graphics/*": [
-        "./src/assets/graphics/*"
-      ],
-      "~styles/*": [
-        "./src/assets/styles/*"
-      ]
-    },
-    // Type checking
-    "strict": true,
-    "noEmit": true,
+    "types": ["vite/client"],
     "skipLibCheck": true,
     "isolatedModules": true,
-    // Interop
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      }
-    ]
-  },
-  "include": [
-    "src",
-    "declarations.d.ts"
-  ],
-  "references": [
-    {
-      "path": "./vite.tsconfig.json"
+
+    "paths": {
+      "@/*": ["./app/*"],
     }
-  ]
+  },
+  "include": ["app"]
 }
